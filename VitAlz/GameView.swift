@@ -11,8 +11,7 @@ struct GameView: View {
                         .aspectRatio(contentMode: .fit) // Maintain the aspect ratio
                         .frame(width: 75, height: 75) // Set your desired size
                     Text("Games")
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(.custom("Utendo-Black", size: 40))
                         .foregroundColor(Color(red: 115.0/255.0, green: 79.0/255.0, blue: 150.0/255.0))
                         .padding(.leading) // Add some leading padding to separate the image and text
                     Spacer()
@@ -28,8 +27,9 @@ struct GameView: View {
                         .frame(width: 200, height: 200)
                 }
                 Text("Simon Says... Let's Play Al Says!")
-                                .font(.system(size: 25))
+                                .font(.custom("Utendo-Semibold", size: 30))
                                 .foregroundColor(Color(red: 115.0/255.0, green: 79.0/255.0, blue: 150.0/255.0))
+                                .multilineTextAlignment(.center)
                                 .padding(.top, 10)
                 Spacer() // Spacer to add some space between the text and the button
                 Spacer()
@@ -37,7 +37,7 @@ struct GameView: View {
                 Spacer()
                 
                 Text("More games coming soon...")
-                                .font(.headline)
+                                .font(.custom("Utendo-Regular", size: 20))
                                 .foregroundColor(Color(red: 115.0/255.0, green: 79.0/255.0, blue: 150.0/255.0))
                                 .padding(.bottom, 20)
                 

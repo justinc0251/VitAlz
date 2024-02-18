@@ -36,7 +36,7 @@ struct VitAlzApp: App {
                         .aspectRatio(contentMode: .fit)
                         .frame(minHeight: 250, maxHeight: 300)
                     Text("Welcome to VitAlz!")
-                                .font(.title)
+                        .font(.custom("Utendo-SemiBold", size: 40))
                                 .foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))
                                 .fontWeight(.bold)
                 }

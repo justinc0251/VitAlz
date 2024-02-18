@@ -44,6 +44,8 @@ struct AuthenticatedView<Content, Unauthenticated>: View where Content: View, Un
                         .background(Color.white)
                         .clipShape(Capsule())
                         .foregroundColor(.purple)
+                        .font(.custom("Utendo-SemiBold", size: 18))
+
                 }
                 .sheet(isPresented: $presentingLoginScreen) {
                     AuthenticationView()

@@ -43,7 +43,7 @@ struct SignupView: View {
                 RoundedRectangle(cornerRadius: 30, style: .continuous).foregroundStyle(.linearGradient(colors:[.white, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)).frame(width: 370, height: 600).rotationEffect(.degrees(70)).offset(y:-150)
                 Text("Sign up")
                     .foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))
-                    .font(.largeTitle)
+                    .font(.custom("Utendo-Semibold", size: 40))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading).offset(y:-190)
                 HStack {
@@ -53,13 +53,15 @@ struct SignupView: View {
                         .disableAutocorrection(true)
                         .focused($focus, equals: .fullName)
                         .submitLabel(.next)
+                        .font(.custom("Utendo-Regular", size: 17))
                         .onSubmit {
                             self.focus = .email
                         }
-                }.offset(y:-200)
+                }
                 .padding(.vertical, 6)
                 .background(Divider(), alignment: .bottom)
                 .padding(.bottom, 4)
+                .offset(y:-200)
                 
                 HStack {
                     Image(systemName: "at")
@@ -68,19 +70,23 @@ struct SignupView: View {
                         .disableAutocorrection(true)
                         .focused($focus, equals: .email)
                         .submitLabel(.next)
+                        .font(.custom("Utendo-Regular", size: 17))
+
                         .onSubmit {
                             self.focus = .password
                         }
-                }.offset(y:-200)
+                }
                 .padding(.vertical, 6)
                 .background(Divider(), alignment: .bottom)
                 .padding(.bottom, 4)
+                .offset(y:-200)
                 
                 HStack {
                     Image(systemName: "lock")
                     SecureField("Password", text: $viewModel.password)
                         .focused($focus, equals: .password)
                         .submitLabel(.next)
+                        .font(.custom("Utendo-Regular", size: 17))
                         .onSubmit {
                             self.focus = .confirmPassword
                         }
@@ -94,13 +100,15 @@ struct SignupView: View {
                     SecureField("Confirm password", text: $viewModel.confirmPassword)
                         .focused($focus, equals: .confirmPassword)
                         .submitLabel(.go)
+                        .font(.custom("Utendo-Regular", size: 17))
                         .onSubmit {
                             signUpWithEmailPassword()
                         }
-                }.offset(y:-200)
+                }
                 .padding(.vertical, 6)
                 .background(Divider(), alignment: .bottom)
                 .padding(.bottom, 8)
+                .offset(y:-200)
                 HStack(spacing: 0) {
                     Image(systemName: "calendar")
                         .padding(.trailing, 6)
@@ -133,6 +141,7 @@ struct SignupView: View {
                         Text("Sign up")
                             .padding(.vertical, 8)
                             .frame(maxWidth: .infinity)
+                            .font(.custom("Utendo-Regular", size: 17))
                     }
                     else {
                         ProgressView()
@@ -147,9 +156,12 @@ struct SignupView: View {
                 
                 HStack {
                     Text("Already have an account?")
+                        .font(.custom("Utendo-Regular", size: 17))
+
                     Button(action: { viewModel.switchFlow() }) {
                         Text("Log in")
-                            .fontWeight(.semibold)
+                            .font(.custom("Utendo-SemiBold", size: 18))
+
                         .foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))                    }
                 }.offset(y:-200)
                 .padding([.top, .bottom], 50)

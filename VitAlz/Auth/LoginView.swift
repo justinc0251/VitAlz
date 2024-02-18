@@ -27,13 +27,14 @@ struct LoginView: View {
 
                 RoundedRectangle(cornerRadius: 30, style: .continuous).foregroundStyle(.linearGradient(colors:[.white, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)).frame(width: 370, height: 600).rotationEffect(.degrees(70)).offset(y:-227)
                 Text("Login")
-                    .font(.largeTitle)
+                    .font(.custom("Utendo-Semibold", size: 40))
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading).offset(y:-270).foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))
                 HStack {
                     Image(systemName: "at")
                     TextField("Email", text: $viewModel.email)
                         .textInputAutocapitalization(.never)
+                        .font(.custom("Utendo-Regular", size: 17))
                         .disableAutocorrection(true)
                         .focused($focus, equals: .email)
                         .submitLabel(.next)
@@ -49,6 +50,7 @@ struct LoginView: View {
                     Image(systemName: "lock")
                     SecureField("Password", text: $viewModel.password)
                         .focused($focus, equals: .password)
+                        .font(.custom("Utendo-Regular", size: 17))
                         .submitLabel(.go)
                         .onSubmit {
                             signInWithEmailPassword()
@@ -70,6 +72,7 @@ struct LoginView: View {
                         Text("Login")
                             .padding(.vertical, 8)
                             .frame(maxWidth: .infinity)
+                            .font(.custom("Utendo-Regular", size: 17))
                     } else {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
@@ -83,11 +86,12 @@ struct LoginView: View {
                 
 
                 HStack {
-                    Text("Don't have an account yet?")
+                    Text("Don't have an account yet?")                        .font(.custom("Utendo-Regular", size: 17))
+
                     
                     Button(action: { viewModel.switchFlow() }) {
                         Text("Sign up")
-                            .fontWeight(.semibold)
+                            .font(.custom("Utendo-SemiBold", size: 18))
                             .foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))
                         
                     }

@@ -36,6 +36,7 @@ struct UserProfileView: View {
            Button(action: {}) {
              Text("edit")
            }
+           .font(.custom("Utendo-SemiBold", size: 15))
            .frame(maxWidth: .infinity, alignment: .center)
            .padding(.bottom, 16)
          }
@@ -45,6 +46,8 @@ struct UserProfileView: View {
          // Custom Row for Name
          HStack {
            Text("Name")
+                 .font(.custom("Utendo-Regular", size: 17))
+
            Spacer()
            Text(viewModel.fullName)
          }
@@ -53,6 +56,8 @@ struct UserProfileView: View {
          // Custom Row for Email
          HStack {
            Text("Email")
+                 .font(.custom("Utendo-Regular", size: 17))
+
            Spacer()
            Text(viewModel.displayName)
          }
@@ -61,8 +66,11 @@ struct UserProfileView: View {
          // Custom Row for Birthdate
          HStack {
            Text("Birthdate")
+                 .font(.custom("Utendo-Regular", size: 17))
+
            Spacer()
-           Text(viewModel.birthdate, style: .date)
+           Text(viewModel.birthdate, style: .date)                 .font(.custom("Utendo-Regular", size: 17))
+
          }
          .padding(.vertical, 8)
         
@@ -71,6 +79,8 @@ struct UserProfileView: View {
           HStack {
             Spacer()
             Text("Sign out")
+                  .font(.custom("Utendo-SemiBold", size: 17))
+
             Spacer()
           }
         }
@@ -80,6 +90,8 @@ struct UserProfileView: View {
           HStack {
             Spacer()
             Text("Delete Account")
+                  .font(.custom("Utendo-SemiBold", size: 17))
+
             Spacer()
           }
         }
