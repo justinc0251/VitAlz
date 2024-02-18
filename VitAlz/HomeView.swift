@@ -22,7 +22,7 @@ struct HomeView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            WelcomeView()
+            WelcomeView(userId: "1O97YLcDmCQv7soe4JlzQ3X5zcc2")
                 .tabItem{
                     Label("List", systemImage: "square.and.pencil")
                 }
