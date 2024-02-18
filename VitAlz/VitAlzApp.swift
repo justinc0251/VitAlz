@@ -13,27 +13,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct VitAlzApp: App {
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-  var body: some Scene {
-    WindowGroup {
-      NavigationView {
-        AuthenticatedView {
-          Image(systemName: "number.circle.fill")
-            .resizable()
-            .frame(width: 100 , height: 100)
-            .foregroundColor(Color(.systemPink))
-            .aspectRatio(contentMode: .fit)
-            .clipShape(Circle())
-            .clipped()
-            .padding(4)
-            .overlay(Circle().stroke(Color.black, lineWidth: 2))
-          Text("Welcome to VitAlz!")
-            .font(.title)
-        } content: {
-          HomeView()
-          Spacer()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                AuthenticatedView {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(minHeight: 250, maxHeight: 300)
+                    Text("Welcome to VitAlz!")
+                                .font(.title)
+                                .foregroundColor(Color(red: 115/255, green: 79/255, blue: 150/255))
+                                .fontWeight(.bold)
+                }
+            content: {
+                    HomeView()
+                }
+            }
         }
-      }
     }
-  }
 }
