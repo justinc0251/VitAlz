@@ -17,7 +17,7 @@ struct HomeView: View {
         TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
             // Ur highest score
             // Reminders you have this to do at 8 pm
-            Text(greeting())
+            HomeScreen()
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }
@@ -45,19 +45,7 @@ struct HomeView: View {
             }
         }
     }
-    private func greeting() -> String {
-        let hour = Calendar.current.component(.hour, from: Date())
-        
-        if hour >= 0 && hour < 12 {
-            return "Good morning, \(viewModel.fullName)!"
-        } else if hour >= 12 && hour < 18 {
-            return "Good afternoon, \(viewModel.fullName)!"
-        } else {
-            return "Good evening, \(viewModel.fullName)!"
-        }
-    }
 
-    
 }
 
 
